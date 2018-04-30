@@ -1,0 +1,18 @@
+.photoswipe{
+
+    & figure{
+        float: left;
+        display: block;
+        margin: 0 15px;
+
+        &:not(:first-child){
+            margin-left: 10px;
+        }
+        
+    }
+
+    & .thumbnail{
+        width: 128px;
+        height: 128px;
+    }
+}

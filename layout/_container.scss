@@ -1,0 +1,74 @@
+.content-wrapper{
+    height: 100%;
+    width: 100%;
+    transition: all linear .2s;
+}
+
+.main{
+    @include transition(all cubic-bezier(.2,1,.6,1) .4s);
+    @include animation('fade-in .8s cubic-bezier(.1,.97,.22,1)');
+    @include mobile{
+        padding: 0 $container-main-mobile-padding-left-right;
+        
+        @if($toolbar-to-fixed == 'true'){
+            padding-top: $toolbar-height;
+        }
+        
+        margin-top: $sidebar-mobile-expand-button-margin-top;
+        &::before{
+            content: '';
+            display: block;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background: rgb(233, 233, 233);
+            height: $sidebar-mobile-expand-button-margin-top;
+            width: 100%;
+            z-index: 98;
+            border-bottom: 1px solid grey;
+        }
+    }
+
+    height: inherit;
+    padding-left: $sidebar-width + $container-main-desktop-padding-left-right;
+    padding-right: $container-main-desktop-padding-left-right;
+    margin-bottom: 25px;
+
+    @if($toolbar-to-fixed == 'true'){
+        padding-top: $toolbar-height;
+    }
+
+    &.unloading{
+        @include transform(translateX(-25%));
+        opacity: 0;
+        @include transition(all $animation-slide-in-timing .5s);
+    }
+
+    &::after{
+        content: '';
+        display: block;
+        background-color: black;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        visibility: unset;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        pointer-events: none;
+        z-index: 98;
+        @include transition(all $animation-slide-in-timing .5s);
+    }
+
+    &.dim::after{
+        opacity: 0.6;
+    }
+}
+
+.fixed-wrapper{
+    position: relative;
+}
+
+.absolute-wrapper{
+    position: absolute;
+}

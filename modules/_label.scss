@@ -1,0 +1,7 @@
+label {
+    @extend %label;
+
+    &:disabled{
+        pointer-events: none;
+    }
+}

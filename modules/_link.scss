@@ -1,0 +1,10 @@
+a{
+    @include no-outline;
+    padding-left: 3px;
+    padding-right: 3px;
+    text-decoration: none;
+    &:focus,
+    &:hover{
+        color: $link-color-hover-focus;
+    }
+}

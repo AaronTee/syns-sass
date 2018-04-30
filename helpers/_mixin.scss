@@ -1,0 +1,188 @@
+$mobile-width: 480px;
+$tablet-width: 768px;
+$desktop-width: 1024px;
+
+/* Screen size */
+@mixin mobile {
+    @media (min-width: 0) and (max-width: #{$tablet-width - 1px}) {
+      @content;
+    }
+  }
+
+@mixin tablet {
+  @media (min-width: 0) and (max-width: #{$desktop-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$desktop-width}) {
+    @content;
+  }
+}
+
+@mixin font-awesome{
+  font-family: 'FontAwesome';
+}
+
+@mixin float-left{
+  float: left;;
+}
+
+@mixin float-right{
+  float: right;;
+}
+
+@mixin no-outline{
+  outline: none !important;
+}
+
+@mixin no-text-decoration{
+  text-decoration: none;
+}
+
+@mixin no-animation{
+  animation: none;
+}
+
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+
+@mixin transform($args...) {
+  -webkit-transform: $args;
+  -moz-transform: $args;
+  -ms-transform: $args;
+  -o-transform: $args;
+  transform: $args;
+}
+
+@mixin animation($str...) {
+  -webkit-animation: #{$str};
+  -moz-animation: #{$str};
+  -ms-animation: #{$str};
+  -o-animation: #{$str};
+  animation: #{$str};      
+}
+
+@mixin background-linear-gradient($direction, $color-stops...) {
+  // Direction has been omitted and happens to be a color-stop
+  @if is-direction($direction) == false {
+    $color-stops: $direction, $color-stops;
+    $direction: 180deg;
+  }
+  background: linear-gradient($direction, $color-stops);
+  background: -moz-linear-gradient($direction, $color-stops);
+  background: -o-linear-gradient($direction, $color-stops);
+  background: -ms-linear-gradient($direction, $color-stops);
+  background: -webkit-linear-gradient(legacy-direction($direction), $color-stops);
+}
+
+@mixin background-image($background: null){
+  @if is-not-null($background){
+    -webkit-background: $background;
+    -moz-background: $background;
+    -o-background: $background;
+    background: $background;
+  }
+}
+
+@mixin background-color($background: null){
+  @if is-not-null($background){
+    -webkit-background: $background;
+    -moz-background: $background;
+    -o-background: $background;
+    background: $background;
+  }
+}
+
+@mixin align-placeholder($side){
+  &::-webkit-input-placeholder {
+    text-align: $side;
+  }
+  &:-moz-placeholder {
+    text-align: $side;
+  }  
+  &::-moz-placeholder {
+    text-align: $side;
+  }
+  &:-ms-input-placeholder {
+    text-align: $side;
+  }  
+}
+
+@mixin keyframes($animation-name) {
+  @-webkit-keyframes #{$animation-name} {
+      @content;
+  }
+  @-moz-keyframes #{$animation-name} {
+      @content;
+  }  
+  @-ms-keyframes #{$animation-name} {
+      @content;
+  }
+  @-o-keyframes #{$animation-name} {
+      @content;
+  }  
+  @keyframes #{$animation-name} {
+      @content;
+  }
+}
+
+
+@mixin input-focus-border-rounder($half-round: false){
+  @if($half-round){
+    &:focus{
+      border: 1px solid $input-focus-border-color;
+      border-top-left-radius: 6px;
+      border-top-right-radius: 6px;
+      box-shadow: 0 0 4px $input-focus-border-color;
+    }
+  }@else{
+    &:focus{
+      border: 1px solid $input-focus-border-color;
+      border-radius: 6px;
+      box-shadow: 0 0 4px $input-focus-border-color;
+    }
+  }
+
+}
+
+@mixin input-validation-error{
+  &.input-validation-error{
+      border: 1px solid $font-error-color;
+  }
+}
+
+@mixin mdl-input-validation-error($input-type){
+  @if ($input-type){
+    & #{$input-type}.input-validation-error{
+      border:none;
+      border-bottom: 2px solid red;
+      & + label{
+        &::after{
+            background-color: transparent;
+        }
+      }
+    }
+  }
+
+  & .field-validation-error{
+    padding-left: 6px;
+    position: absolute;
+    font-size: 0.8em;
+  }
+}
+
+@mixin ignore-main-padding{
+  left: $container-main-desktop-padding-left-right;
+  margin-left: -$container-main-desktop-padding-left-right - $container-main-desktop-padding-left-right;
+  @include mobile{
+      left: $container-main-mobile-padding-left-right;
+      margin-left: -$container-main-mobile-padding-left-right - $container-main-mobile-padding-left-right;
+  }
+}

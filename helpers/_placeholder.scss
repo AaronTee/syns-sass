@@ -1,0 +1,167 @@
+%h1{
+    font-size: 1.5em;
+    margin-top: 0;
+    margin-bottom: 0.2em;
+    padding-top: 0.67em;
+    line-height: 1em;
+}
+
+%h2{
+    font-size: 1.3em;
+    margin-top: 0;
+    padding-top: 0.67em;
+    line-height: 1em;
+}
+
+%h3{
+    font-size: 1.2em;
+    margin-top: 0;
+    padding-top: 0.67em;
+    line-height: 1.2em;
+}
+
+%h4{
+    font-size: 1.1em;
+    margin-top: 0;
+    padding-top: 0.67em;
+    line-height: 1em;
+}
+
+%message{
+    clear: both;
+    font-size: 1.1em;
+    font-weight: bold;
+    margin: 20px 0 10px 0;
+    border: 1px solid grey;
+}
+
+%input{
+    @if(variable-exists($name: input-textbox-border)){
+        border: $input-textbox-border;
+    }
+    background: $input-textbox-background-color;
+    font-family: $body-font-family;
+    color: $body-font-color;
+    font-size: 1em;
+    margin: 1px 0 1px 0;
+    padding: 5px;
+    height: 32px;
+    width: $input-textbox-width;
+    border-radius: 0;
+
+    &.numinput-sm{
+        text-align: right; 
+        width: 70px; 
+    }
+    
+    &.numinput-sm[readonly]{
+        text-align: right; 
+        width: 70px; 
+        border-style: none; 
+        background-color: transparent;
+    }
+    
+    &.numinput-md{
+        text-align: right; 
+        width: 90px; 
+    }
+
+    &.numinput-lg{
+        text-align: right; 
+        width: 120px; 
+    }
+    
+    &.numinput-md[readonly]
+    {
+        text-align: right; 
+        width: 90px; 
+        border-style: none; 
+        background-color: transparent;
+    }
+}
+
+%select{
+    @extend %input;
+    padding-right: 0;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+%button{
+    background: $theme-primary-dark;
+    font-family: $body-font-family;
+    color: #ddd;
+    margin: 1px 0 1px 0;
+    padding: 5px;
+    height: 32px;
+    width: auto;
+    border-radius: 4px;
+    border: 1px solid $theme-primary;
+    -webkit-user-select: none;     
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    @include transition(all linear .1s);
+
+    &:hover{
+        filter: brightness(0.8);
+    }
+
+    &:active{
+        filter: brightness(0.6);
+    }
+}
+
+%label{
+    background: $input-textbox-background-color;
+    color: $body-font-color;
+}
+
+%error{
+    color: $font-error-color;
+}
+
+%mdl-input{
+    font-size: $mdl-textfield-input-font-size;
+    padding: 20px 0;
+    text-align: left;
+    @each $type in 'text' 'password'{
+        @include mdl-input-validation-error('input[type=#{$type}]');
+    }
+    & .mdl-textfield__input{
+        @extend %input;      
+        border: none;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.418);
+        color: $body-font-color;
+        top: $mdl-textfield-padding-top-bottom + 6px;
+    }
+}
+
+%mdl-select{
+    font-size: $mdl-selectfield-input-font-size;
+    text-align: left;
+    @include mdl-input-validation-error(select);
+    & .mdlext-selectfield__select{
+        @extend %select;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.418);
+        color: $body-font-color;
+        padding-right: 20px;
+    }
+}
+
+%mdl-input--after{
+    &:after{
+        color: $portal-mdl-textfield-label-color;
+        background-color: $theme-primary-dark;
+        bottom: $mdl-textfield-padding-top-bottom - 5px;
+    }
+}
+
+%logo{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    padding: 8px 0;
+}

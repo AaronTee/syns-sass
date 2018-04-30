@@ -1,0 +1,165 @@
+
+.portal{
+
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+
+  input:-webkit-autofill{
+    :hover,
+    :focus,
+    :active{
+      @include transition('background-color 5000s ease-in-out 0s');
+    }
+  }
+
+  .bg {
+    /*position: fixed;*/
+    background-image: root-url('images/whitey.png');
+    background-repeat: repeat;
+    background-size: 600px;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    z-index: -1;
+
+      &.no-animation{
+        @include no-animation;
+      }
+  }
+
+  .content-wrapper{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .version-info{
+      text-align: center;
+      color: #777;
+      margin: 20px auto;
+  }
+
+  .syns-card{
+
+    text-align: center;
+    padding: 50px;
+
+    .validation-summary {
+      margin: 10px 0;
+    }
+
+    .syns-card__action{
+
+      padding-top: 20px;
+
+      input[type=submit]{
+        background-color: rgba(10,33,51,.2);
+        font-size: 1.1em;
+        outline: none;
+        border: none;
+        padding: 10px 0px;
+        color: #234;
+        width: 250px;
+        transition: all linear .2s;
+
+        &:hover{
+          background-color: rgba(10,33,51,.3);
+          cursor: pointer;
+        }
+
+        &:focus{
+          background-color: rgba(10,33,51,.5);
+        }
+      }
+    }
+
+    .error-section{
+      ul{
+        padding: 0;
+        li{
+          list-style: none;
+        }
+      }
+    }
+
+    .syns-logo{
+      @extend %logo;
+      max-width: 100%;
+      height: 175px;
+      display:block;
+      margin:auto;
+      padding: 0;
+    }
+
+    @include mobile{
+
+      margin-top: 0;
+
+      & .mdl-shadow--2dp{
+        box-shadow: 0;
+      }
+
+      & .mdl-card{
+        background-color: transparent;
+      }
+    }
+
+    .mdl-textfield .mdl-textfield__label{
+      font-weight: 500;
+    }
+  }
+
+  /*dark theme form material design lite*/
+  // .user-theme-pref {
+  //   &.mdl--dark{
+  //     .bg{
+  //       background-image: url('images/darkey.png');
+  //     }
+  //   }
+  // }
+
+  // .mdl--dark .syns-card.mdl-card{
+  // background: rgba(0, 0, 0, 0.3);
+  // }
+
+  // .mdl--dark .syns-card .syns-card__action input[type=submit]:hover{
+  // background-color: rgba(0, 0, 0, 0.5);
+  // }
+
+  // .mdl--dark .syns-card .syns-card__action input[type=submit] {
+  // background-color: rgba(0, 0, 0, 0.3);
+  // color: #ddd;
+  // }
+
+  // .mdl--dark .syns-card .syns-card__action input[type=submit]:focus{
+  // background-color: rgba(0, 0, 0, 0.9);
+  // }
+
+
+  // .mdl--dark .syns-card .syns-logo{
+  // filter: brightness(1.6);
+  // }
+
+  // .mdl--dark .mdl-textfield__label,
+  // .mdl--dark .mdl-textfield--floating-label.is-focused .mdl-textfield__label, 
+  // .mdl--dark .mdl-textfield--floating-label.is-dirty .mdl-textfield__label, 
+  // .mdl--dark .mdl-textfield--floating-label.has-placeholder .mdl-textfield__label{
+  // color: rgba(255, 255, 255, 0.6);
+  // }
+
+  // .mdl--dark .mdl-textfield__input.is-focused{
+  // border-bottom: none;
+  // }
+
+  // .mdl--dark .mdl-textfield__label:after{
+  // background-color: rgb(193, 8, 11);
+  // }
+
+  // .mdl--dark .mdl-textfield__input{
+  // font-size: 1em;
+  // }
+}

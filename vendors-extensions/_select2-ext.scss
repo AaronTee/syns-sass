@@ -1,0 +1,41 @@
+//Temporary apply to only syns-search-form
+
+.syns-search-form{
+    & .select2{
+        @extend %select;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.418);
+        color: $body-font-color;
+        padding-right: 20px;
+        height: 32px;
+        overflow-y: hidden;
+
+        & .select2-selection--single{
+            border: inherit;
+            background-color: inherit;
+            line-height: inherit;
+            height: unset;
+
+            & .select2-selection__rendered{
+                padding-left: 0;
+                padding-right: 0;
+                line-height: inherit;
+                color: inherit;
+            }
+
+            & .select2-selection__arrow{
+                display: none;
+            }
+        }
+
+        & + .mdlext-selectfield__label{
+            margin-top: $mdl-textfield-padding-top-bottom - 15px -4px;
+        }
+    }
+}
+
+.select2-container--default{
+    // margin: 3px 0 !important;
+    & .select2-dropdown{
+        max-width: 300px;
+    }
+}

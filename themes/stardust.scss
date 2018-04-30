@@ -1,0 +1,66 @@
+/* Portal */
+$portal-mdl-textfield-label-color: #555;
+$portal-mdl-card-background-color: #ccc;
+$portal-mdl-card-logo-url: url("images/dmsf_logo2.png");
+
+/* Theme color picker */
+$theme-primary: rgb(76, 102, 187);
+$theme-primary-dark: rgb(49, 66, 119);
+$theme-primary-darker: #213841;
+$theme-secondary: #ad5fd4;
+$theme-secondary-dark: #7e459c;
+$theme-secondary-darker: #421e46;
+
+$html-background-image-url: url('images/whitey.png');
+$html-background-image-blend-mode-lighten-color: rgba(255, 255, 255, 0.267);
+$html-is-background-size-explicit: false;
+
+/* body */
+$body-font-color: #333;
+$body-font-family: 'Open Sans', sans-serif;
+
+/* Page settings */
+$link-color-hover-focus: $theme-secondary;
+
+/* Sidebar */
+$sidebar-width: 230px;
+
+$sidebar-font-family: 'Lato', sans-serif;
+$sidebar-font-color: #ddd;
+$sidebar-font-hover-color: #d17cfc;
+$sidebar-logo-url: url("images/dmst_logo2.png");
+
+$sidebar-toolbar-scroller-thumb-background-color: rgba(215, 25, 33, .8);
+$sidebar-toolbar-font-hover-color: orange;
+$sidebar-toolbar-font-icon-signout-hover-color: #ff4812;
+
+$sidebar-after-image-url: url();
+$sidebar-after-image-bluriness: 0px;
+$sidebar-after-image-opacity: 0.35;
+
+$sidebar-footer-image-url: url('images/syntrinos_logo.png');
+
+$sidebar-mobile-expand-button-margin-top: 40px;
+
+/* Toolbar */
+$toolbar-button-font-color: $theme-secondary-dark;
+$toolbar-button-background-hover-color: $theme-secondary-dark;
+$toolbar-button-background-color: #eee;
+
+/* Container */
+$container-main-desktop-padding-left-right: 25px;
+$container-main-mobile-padding-left-right: 10px;
+
+/* Input */
+$font-error-color: #e80c4d;
+$input-textbox-border-color : #c0c0c0;
+
+/* Dropdown */
+$input-focus-border-color: #053341;
+
+/* Add your custom page variables here */
+/* Pages */
+/* Dashboard */
+$page-dashboard-img-logo: url("images/dmst_logo2.png");
+
+@import '../_application.scss';

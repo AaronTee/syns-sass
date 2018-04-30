@@ -1,0 +1,16 @@
+input{
+    &[type=text],
+    &[type=password],
+    {
+        @extend %input;
+        border: 1px solid #aaa;
+        // @include input-focus-border-rounder;
+        @include input-validation-error;
+        @include transition(all linear .1s);
+    }
+    &.syns-input{
+        &.syns-input--big{
+            height: 40px;
+        }
+    }
+}

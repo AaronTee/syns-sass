@@ -1,0 +1,103 @@
+/* Animation */
+$animation-slide-in-timing: cubic-bezier(.1,.97,.22,1) !default;
+$transition: all linear .3s !default;
+$transition-linear-fast: all linear .1s !default;
+
+/* Portal */
+$portal-mdl-textfield-label-color: #555 !default;
+$portal-mdl-card-background-color: #ccc !default;
+
+/* Theme color picker */
+$theme-base-color: white !default;
+$theme-primary: rgb(21, 41, 47) !default;
+$theme-primary-dark: rgb(21, 41, 47) !default;
+$theme-primary-darker: rgb(21, 41, 47) !default;
+$theme-primary-highlight: #f1f4f5 !default;
+
+$theme-secondary: rgb(163, 5, 8) !default;
+$theme-secondary-dark: rgb(163, 5, 8) !default;
+$theme-secondary-darker: rgb(163, 5, 8) !default;
+
+$html-background-image-url: url('images/whitey.png') !default;
+$html-background-image-blend-mode-lighten-color: rgba(255, 255, 255, 0.267) !default;
+$html-is-background-size-explicit: false !default;
+$html-background-image-opacity: 0.25 !default;
+
+/* body */
+$body-font-color: #333 !default;
+$body-font-color-invert: lighten(invert($body-font-color), 5%) !default;
+$body-font-family: 'Open Sans', sans-serif !global;
+$selection-color: rgba($theme-secondary, 0.25) !default;
+
+/* Page settings */
+$link-color-hover-focus: rgb(224, 69, 69) !default;
+
+/* Sidebar */
+$sidebar-width: 230px !default;
+
+$sidebar-font-family: 'Lato', sans-serif !global;
+$sidebar-font-color: $body-font-color-invert !default;
+$sidebar-font-hover-color: $theme-secondary !default;
+$sidebar-font-size: 0.9em !default;
+$sidebar-font-mobile-size: 1.1em !default;
+$sidebar-link-padding-top-bottom: 6px 15px !default;
+$sidebar-link-padding-mobile-top-bottom: 10px 15px !default;
+$sidebar-background-color-stop: $theme-secondary-darker 0%, $theme-primary-darker 100% !default;
+$sidebar-link-hover-background-color-stop: rgba(15,246,19,0) 0%, rgba(253, 86, 86, 0) 27%, rgba(33, 33, 33, 0.7) 100% !default;
+
+$sidebar-toolbar-scroller-thumb-background-color: rgba(215, 25, 33, .8) !default;
+$sidebar-toolbar-font-color: #ddd !default;
+$sidebar-toolbar-font-hover-color: orange !default;
+$sidebar-toolbar-font-icon-signout-hover-color: #ff4812 !default;
+
+$sidebar-after-image-bluriness: 0px !default;
+$sidebar-after-image-opacity: 0.35 !default;
+
+$sidebar-footer-image-url: url('images/syntrinos_logo.png') !default;
+
+$sidebar-mobile-expand-button-margin-top: 40px !global;
+
+/* Toolbar */
+$toolbar-to-fixed: 'true' !default;
+$toolbar-tool-size: 30px !default;
+$toolbar-height: 40px !default;
+$toolbar-button-font-color: $theme-secondary !default;
+$toolbar-button-background-color: #ddd !default;
+$toolbar-button-background-hover-color: $theme-secondary !default;
+
+/* Container */
+$container-main-desktop-padding-left-right: 25px !global;
+$container-main-mobile-padding-left-right: 10px !global;
+
+/* Input */
+$font-error-color: #e80c4d !default;
+$input-textbox-background-color: rgba(255, 255, 255, 0) !global;
+$input-textbox-border-color : #c0c0c0 !default;
+$input-textbox-width: 250px;
+
+/* Dropdown */
+$input-focus-border-color: #053341 !default;
+
+/* Validation */
+$validation-header-error-border-color: #ffa7a7 !default;
+$validation-header-error-background-color: #ffe7e7 !default;
+
+/* Table */
+$table-cell-border-color: rgba($theme-primary, 0.1);
+$table-container-border-color: rgba($theme-primary, 0.1);
+
+/* Pages */
+/* Dashboard */
+
+/* Extension */
+/* mdl ext */
+$mdl-textfield-padding-top-bottom: 15px !global;
+$mdl-textfield-input-font-size: 1em !global;
+$mdl-textfield-label-font-size: 1em !global;
+$mdl-selectfield-input-font-size: 1em !global;
+$mdl-selectfield-label-font-size: 1em !global;
+
+/* Bootstrap */
+$bootstrap-table-checkbox-hover-background-color: $theme-secondary !default;
+$bootstrap-table-checkbox-checked-background-color: $theme-secondary-dark !default;
+$bootstrap-table-tr-selected-background-color: $theme-secondary !default;

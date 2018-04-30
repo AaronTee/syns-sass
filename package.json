@@ -1,0 +1,29 @@
+{
+  "name": "syntrinos-theme",
+  "version": "1.0.0",
+  "description": "Shared themes for syntrinos website.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:sass": "gulp build:sass",
+    "watch": "gulp clean && gulp watch",
+    "build": "gulp clean && gulp build",
+    "clean": "gulp clean",
+    "debug": "gulp clean && gulp build --sourcemap"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@syntrinogitlab.southeastasia.cloudapp.azure.com:aaron.tee/syntrinos-theme.git"
+  },
+  "author": "Aaron Tee",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-clean": "^0.3.2",
+    "gulp-if": "^2.0.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-sass-variables": "^1.1.1",
+    "gulp-sourcemaps": "^2.6.1",
+    "yargs": "^10.0.3"
+  }
+}

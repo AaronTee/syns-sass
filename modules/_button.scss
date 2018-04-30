@@ -1,0 +1,10 @@
+input[type=button]{
+    @extend %button;
+    // @include transition(all linear .1s);
+    border: none;
+
+    &:disabled{
+        filter: brightness(0.5);
+        pointer-events: none !important;
+    }
+}

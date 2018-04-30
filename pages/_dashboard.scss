@@ -1,0 +1,7 @@
+.dashboard {
+    .logo{
+        @extend %logo;
+        width: 600px;
+        margin: 0 auto;
+    }
+}

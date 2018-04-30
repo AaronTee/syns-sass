@@ -1,0 +1,52 @@
+@include keyframes(spin) {
+    to {transform:rotate(359deg);}
+}
+
+@include keyframes(hue-change) {
+  to { filter:hue-rotate(359deg);}
+}
+
+@include keyframes(bounce) {
+  from {
+    transform: translateY(2px);
+  }
+  to {
+    transform: translateY(-1px);
+  }
+}
+
+@include keyframes(to-top-btn-slide-up) {
+    from { bottom: -50px }
+    to { bottom : 10px }
+}
+
+@include keyframes(to-top-btn-slide-up) {
+  from { bottom: -50px }
+  to { bottom : 10px }
+}
+
+@include keyframes(fade-in) {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@include keyframes(outside-dialog-left-slide-in) {
+  0% {right: -300px }
+  10% {right: -10px }
+  95% {right: -10px }
+  100% {right: -300px }
+}
+
+@include keyframes(outside-sidebar-icon-slide-right) {
+  from {
+    transform: translateX(-50px);
+  }
+  to {
+    transform: translateX(0px);
+  }
+}

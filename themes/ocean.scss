@@ -1,0 +1,73 @@
+/* Portal */
+$portal-mdl-textfield-label-color: #555;
+$portal-mdl-card-background-color: #ccc;
+$portal-mdl-card-logo-url: url("images/dmsf_logo2.png");
+
+/* Theme color picker */
+$theme-primary: #72b3ff;
+$theme-primary-dark: #41678f;
+$theme-primary-darker: rgb(42, 67, 92);
+$theme-secondary: rgb(137, 235, 142);
+$theme-secondary-dark: rgb(82, 139, 85);
+$theme-secondary-darker: rgb(21, 34, 21);
+
+$html-background-image-url: url('images/whitey.png');
+$html-background-image-blend-mode-lighten-color: rgba(255, 255, 255, 0.267);
+$html-is-background-size-explicit: false;
+$html-background-image-opacity: 0.3;
+
+/* body */
+$body-font-color: #333;
+$body-font-family: 'Open Sans', sans-serif;
+$selection-color: rgba($theme-secondary-dark, 0.5);
+
+/* Page settings */
+$link-color-hover-focus: $theme-secondary;
+
+/* Sidebar */
+$sidebar-width: 230px;
+
+$sidebar-font-family: 'Lato', sans-serif;
+$sidebar-font-color: #ddd;
+
+$sidebar-logo-url: url("images/dmst_logo2.png");
+$sidebar-toolbar-scroller-thumb-background-color: rgba(215, 25, 33, .8);
+$sidebar-toolbar-font-color: #ddd;
+$sidebar-toolbar-font-hover-color: orange;
+$sidebar-toolbar-font-icon-signout-hover-color: #ff4812;
+
+$sidebar-after-image-url: url();
+$sidebar-after-image-bluriness: 0px;
+$sidebar-after-image-opacity: 0.35;
+
+$sidebar-footer-image-url: url('images/syntrinos_logo.png');
+
+$sidebar-mobile-expand-button-margin-top: 40px;
+
+/* Toolbar */
+$toolbar-button-font-color: darkgreen;
+$toolbar-button-background-hover-color: rgb(1, 141, 1);
+
+/* Container */
+$container-main-desktop-padding-left-right: 25px;
+$container-main-mobile-padding-left-right: 10px;
+
+/* Input */
+$font-error-color: #e80c4d;
+$input-textbox-background-color: rgb(255, 255, 255);
+$input-textbox-border-color : #c0c0c0;
+
+/* Dropdown */
+$input-focus-border-color: #053341;
+
+/* Add your custom page variables here */
+/* Pages */
+/* Dashboard */
+$page-dashboard-img-logo: url("images/dmst_logo2.png");
+
+/* extension */
+/* Bootstrap */
+$bootstrap-table-checkbox-hover-background-color: rgb(0, 134, 0);
+$bootstrap-table-tr-selected-background-color: rgb(0, 131, 0) !default;
+
+@import '../_application.scss';

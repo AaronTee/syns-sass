@@ -1,0 +1,13 @@
+select{
+    @extend %select;
+    // @include input-focus-border-rounder(true);
+    @include input-validation-error;
+    // @include transition(all linear .1s);
+    border-radius: 0px;
+    height: 30px;
+    font-size: 11px;
+    max-width: 250px;
+    min-width: 0;
+    //Temporary width
+    width: auto;
+}

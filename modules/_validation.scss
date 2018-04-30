@@ -1,0 +1,28 @@
+.field-validation-valid {
+    display: none;
+}
+
+.field-validation-error{
+    @extend %error;
+    font-weight: 100;
+}
+
+.validation-summary{
+
+    margin-top: $container-main-desktop-padding-left-right;
+
+    @include mobile{
+        margin-top: $container-main-mobile-padding-left-right;
+    }
+    
+
+    & .validation-summary-errors{
+        @extend %error;
+        padding: 6px 12px;
+        font-weight: bold;
+        border: 1px solid $validation-header-error-border-color;
+        background-color: $validation-header-error-background-color;
+        box-shadow: grey 0 0 5px;
+    }
+}
+

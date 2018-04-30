@@ -1,0 +1,6 @@
+textarea{
+    @extend %input;
+    @include input-focus-border-rounder;
+    font-family: inherit;
+    resize: none;
+}

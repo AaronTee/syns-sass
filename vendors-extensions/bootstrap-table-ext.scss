@@ -1,0 +1,218 @@
+.bootstrap-table{
+
+    & .fixed-table-container{
+        border-color: $table-container-border-color;
+        border-width: 1px;
+
+        &.table-no-bordered {
+            border: 0px solid transparent;
+        }
+
+        & .fixed-table-header{
+            overflow: hidden;
+            min-width: 50%;
+            max-width: 100%;
+
+            @extend %inner-table;
+        }
+
+        & .fixed-table-body {
+            overflow-x: auto;
+            overflow-y: auto;
+            height: 100%;
+            min-width: 50%;
+            max-width: 100%;
+
+            & .fixed-table-loading {
+                z-index: 2;
+            }
+
+            @extend %inner-table;
+        }
+
+        & .fixed-table-footer {
+            border-top: 1px solid #111;
+            overflow: hidden;
+            min-width: 50%;
+            max-width: 100%;
+        }
+    }
+}
+
+%inner-table{
+    & .table{
+        border-radius: 0;
+        border-bottom: none !important;
+        &:not(.table-condensed) > tbody > tr > td {
+            padding: 5px 8px;
+            line-height: 1.42857143;
+            vertical-align: top;
+            border-top: 1px solid #ddd;
+        }
+
+        & a{
+            transition: all linear .2s;
+            color: #333;
+            &.actionlink-iconize {
+                font-family: FontAwesome;
+                padding: 2px 4px;
+                margin: 0 4px;
+                font-size: 1.4em;
+                text-decoration: none;
+                &.actionlink-iconize--detail::before {
+                    content: '\f0f6';
+                }
+                &.actionlink-iconize--edit::before {
+                    content: '\f040';
+                }
+                &.actionlink-iconize--approve::before {
+                    content: '\f00c';
+                }
+                &.actionlink-iconize--image::before {
+                    content: '\f030';
+                }
+                &.actionlink-iconize--print::before {
+                    content: '\f02f';
+                }
+            }
+            &:hover {
+                color: #888;
+            }
+            &:active,
+            &:focus {
+                color: #444;
+            }
+        }
+
+        & .bs-checkbox_pad{
+
+            display: inline-block;
+
+            & > label{
+                width: 24px;
+                height: 24px;
+                border-radius: 0px;
+                background-color: white;
+                border: 1px solid #777;
+                margin: 0;
+
+                /* Prevent double click to highlight */
+                -webkit-user-select: none;        
+                -moz-user-select: none;
+                -ms-user-select: none;
+                
+                @include transition(background-color linear .2s, border-radius linear .5s);
+
+                &:hover{
+                    border-radius: 20px;
+                    @include animation(spin .7s $animation-slide-in-timing);
+                    background-color: $bootstrap-table-checkbox-hover-background-color;
+                    cursor: pointer;
+                    border-width: 0px;
+                }
+
+                &.checked{
+                    border-radius: 20px;
+                    background-color: $bootstrap-table-checkbox-checked-background-color;
+                    border-width: 0px;
+                }
+            }
+
+            /* Checkbox */
+            & [type=checkbox]{
+                visibility: hidden;
+            }
+        }
+
+        & > thead{
+            & > tr {
+                @include background-color($theme-primary-dark);
+                color: lighten(invert($body-font-color), 5%);
+
+                & > th{
+                    @extend %h3;
+                    border-radius: 0;
+                    padding-top: 0;
+                    text-align: left;
+                    border-color: $table-cell-border-color;
+
+                    &[class^=hidden]{
+                        border: none;
+                    }
+                }
+
+                //Checkbox
+                & .bs-checkbox > .th-inner{
+                    padding: 1px;
+                }
+            }
+        }
+
+        & > tbody{
+            & > tr {
+                box-shadow: 0;
+                @include background-color($theme-base-color);
+                @include transition($transition-linear-fast);
+                &.selected {
+                    @include background-color(rgba($bootstrap-table-tr-selected-background-color, 0.3) !important);
+                }
+                &.active {
+                    @include background-color($theme-primary-highlight);
+                }
+                &:hover{
+                    @include background-color(darken($theme-base-color, 10%));
+                }
+                & > td{
+                    @include transition($transition-linear-fast);
+                    background-color: unset;
+                    border-color: $table-cell-border-color;
+                    & > span.label-status {
+                        display: inline-block;
+                        padding: .2em .6em .3em;
+                        font-size: 80%;
+                        font-weight: bold;
+                        color: #fff;
+                        text-align: center;
+                        white-space: nowrap;
+                        vertical-align: baseline;
+                        border-radius: .4em;
+                        background-color: green;
+                    }
+
+                    &.status-col--info > span.label-status {
+                        background-color: grey;
+                    }
+
+                    &.status-col--active > span.label-status {
+                        background-color: rgb(24, 170, 150);
+                    }
+
+                    &.status-col--success > span.label-status {
+                        background-color: #5cb85c;
+                    }
+
+                    &.status-col--danger > span.label-status {
+                        background-color: #d9534f;
+                    }
+
+                    &.status-col--warning > span.label-status {
+                        background-color: #f0ad4e;
+                    }
+
+                    /* checkbox */
+                    &.bs-checkbox{
+                        
+                        & .bs-checkbox_pad{
+                            min-width: 25px;
+                            min-height: 25px;
+                        }
+                    }
+
+                    &[class^=hidden]{
+                        border: none;
+                    }
+                }
+            }
+        }
+    }
+}

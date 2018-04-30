@@ -1,0 +1,87 @@
+::selection{
+    background-color: $selection-color;
+}
+
+.mdl-card{
+    display: block;
+    width: 100%;
+    min-width: 300px;
+    max-width: 500px;
+    background-color: rgba(240, 240, 240, 0.7);
+}
+
+.mdl-textfield{
+    line-height: 20px;
+    width: 250px;
+    padding: $mdl-textfield-padding-top-bottom 0;
+    @extend %mdl-input;
+
+    & .mdl-textfield__label{
+        font-size: $mdl-textfield-label-font-size;
+    }
+
+    &.mdl-textfield--floating-label.is-dirty{
+        .mdl-textfield__label{
+            padding-left: 5px;
+        }
+    }
+
+    & .mdl-textfield__label{
+        top: $mdl-textfield-padding-top-bottom + 6px;
+        padding-left: 10px;
+        color: rgba($body-font-color, 0.5);
+        @extend %mdl-input--after;
+    }
+
+    & .syns-input--big + .mdl-textfield__label {
+        top: $mdl-textfield-padding-top-bottom + 10px;
+    }
+
+}
+
+@each $state in 'is-focused' 'is-dirty' 'has-placeholder'{
+    .mdl-textfield--floating-label.#{$state} .mdl-textfield__label{
+        color: $portal-mdl-textfield-label-color;
+        top: $mdl-textfield-padding-top-bottom - 15px;
+    }
+}
+
+.mdlext-selectfield{
+    line-height: 20px;
+    width: 250px;
+    padding: $mdl-textfield-padding-top-bottom 0;
+    @extend %mdl-select;
+
+    & .mdlext-selectfield__label{
+        font-size: $mdl-selectfield-label-font-size;
+    }
+    
+    &.mdlext-selectfield--floating-label.is-dirty{
+        .mdlext-selectfield__label{
+            padding-left: 5px;
+        }
+    }
+
+    .mdlext-selectfield__label{
+        top: $mdl-textfield-padding-top-bottom + 6px;
+        padding-left: 10px;
+        @extend %mdl-input--after;
+    }
+
+    .syns-input--big + .mdlext-selectfield__label {
+        top: $mdl-textfield-padding-top-bottom + 10px;
+    }
+
+    @each $state in 'is-focused' 'is-dirty.is-dirty' 'has-placeholder'{
+        &.mdlext-selectfield--floating-label.#{$state} .mdlext-selectfield__label{
+            color: $portal-mdl-textfield-label-color;
+            top: $mdl-textfield-padding-top-bottom - 15px;
+        }
+    }
+}
+
+.mdl-switch__label{
+    margin-right: 30px;
+    margin-left: -18px;
+}
+

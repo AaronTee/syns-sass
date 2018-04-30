@@ -1,0 +1,101 @@
+*{
+    -webkit-overflow-scrolling: touch;
+}
+
+*:focus{
+    @include no-outline;
+}
+
+html {
+
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow-y: scroll;
+
+    &::after{
+        content: "";
+        opacity: $html-background-image-opacity;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        position: fixed;
+        z-index: -1;
+        background-color: transparent;
+        @if variable-exists(html-background-image-url) {
+            @if($html-is-background-size-explicit){
+                background-image: $html-background-image-url;
+                background-blend-mode: lighten;
+                background-color: $html-background-image-blend-mode-lighten-color;
+                background-size: 250px;
+            }
+            @else{
+                background: $html-background-image-url no-repeat center center fixed; 
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                background-size: cover;
+            }
+        }
+    }
+}
+
+body{
+    color: $body-font-color;
+    background-color: transparent;
+    font-family: $body-font-family;
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+    -ms-text-size-adjust: 100%; 
+    -webkit-text-size-adjust: 100%;
+    line-height: 1.2em;
+
+    /* Firefox */
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.noselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: pointer;
+}
+
+.font-awesome{
+    font-family: FontAwesome !important;
+    min-width: 25px !important;
+}
+
+.float-left {
+    @include float-left;
+}
+
+.float-right {
+    @include float-right;
+}
+
+.clear-fix:after {
+    content: "";
+    clear: both;
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+
+.error{
+    @extend %error;
+}
+
+.datepicker 
+.table-condensed {
+  width: $input-textbox-width - 8px;
+  height: $input-textbox-width - 8px;
+}

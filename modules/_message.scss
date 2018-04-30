@@ -1,0 +1,13 @@
+.message{
+    &-info{
+        @extend %message;
+    }
+    &-error{
+        @extend %message;
+        color: #f54343;
+    }
+    &-success{
+        @extend %message;
+        color: #7ada9f;
+    }
+}

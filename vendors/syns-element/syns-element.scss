@@ -1,0 +1,184 @@
+/* Toolbar */
+$toolbar-border: 2px solid rgba(0, 0, 0, 0.507);
+$toolbar-height: $toolbar-height;
+$theme-primary: $theme-primary;
+$theme-primary-darker: $theme-primary-darker;
+
+.syns-toolbar-content,
+.syns-toolbar{
+    @if($toolbar-to-fixed == 'true'){
+        position: fixed;
+        width: 100%;
+        padding-left: $sidebar-width/* + $container-main-desktop-padding-left-right*/;
+        left: 0;
+
+        @include mobile{
+            top: $sidebar-mobile-expand-button-margin-top;
+            left: 0;
+            padding-left: 0;
+        }
+    }
+    @else{
+        position: relative;
+        // padding-left: $container-main-desktop-padding-left-right;
+        @include ignore-main-padding;
+    }
+
+    height: auto;
+    min-height: $toolbar-height;
+    top: 0;
+    background-color: $theme-primary-darker;
+    box-shadow: 2px 0 5px #333;
+    z-index: 97;
+
+    & .syns-toolbar__wrapper{
+
+        display: flex;
+        overflow-x: auto;
+        overflow-y: hidden;
+    
+        & .syns-toolbar__segment{
+
+            display: inline-block;
+            
+            border-left: $toolbar-border;
+            padding: 6px;
+            border-right: none;
+            overflow: hidden;
+
+            &.stick-right{
+                margin-left: auto;
+                &:not(:first-child){
+                    border-left: none;
+                }
+            }
+
+            &:not(:first-child){
+                border-left: $toolbar-border;; 
+            }
+            
+            & .syns-tool-wrapper{
+                display: table-cell;
+                vertical-align: middle;
+                text-align: center;
+            }
+
+            & .syns-tool{
+                display: block;
+                width: auto;
+                font-family: $body-font-family;
+                height: $toolbar-tool-size;
+                line-height: $toolbar-tool-size;
+                margin: 0 4px;
+                padding: 0 10px;
+                border: 0;
+                border-radius: 4px;
+                text-decoration: none;
+                font-weight: 500;
+                background-color: $toolbar-button-background-color;            
+                color: $toolbar-button-font-color;
+                cursor: pointer;
+                -webkit-user-select: none;     
+                -moz-user-select: none;
+                -ms-user-select: none;
+                -o-user-select: none;
+                user-select: none;
+                
+                // @include transition(background-color linear .1s);
+                @extend %h3;
+                
+                &:hover{
+                    background-color: $toolbar-button-background-hover-color;
+                    filter: brightness(1.2);
+                    color: #ddd;
+                }
+
+                &[disabled],
+                &:disabled{
+                    pointer-events: none;
+                    filter: contrast(0.75);
+                    opacity: 0.7;
+                }
+            }
+        }
+    }
+}
+
+.syns-search{
+    // border-bottom: 2px dashed $theme-primary;
+    margin: 15px 0;
+
+    & .syns-search__field{
+        
+        padding: 15px 20px;
+        background-color:white;
+        border: 1px solid #ddd;
+        
+        & > div:not(:last-child){
+            margin-right: 15px
+        }
+    }
+
+    & .syns-search__search-title{
+        @extend %h2;
+        font-weight: bold;
+    }
+
+    & .syns-search__btn{
+        @extend %button;
+        margin-right: 10px;
+        padding: 5px 10px;
+        font-size: 1.2em;
+        width: 45px;
+        @include font-awesome;
+        font-family: $body-font-family;
+        @include transition(width $animation-slide-in-timing .4s);
+
+        // & .syns-search__btn__search{
+        //     color: rgb(255, 167, 167);
+        //     @include animation(hue-change 3000ms linear infinite);
+        // }
+
+        &.syns-search__btn--long{
+            width: 75px;
+        }
+
+        &.syns-search__btn--longer{
+            width: 125px;
+
+            &:hover{
+                width: 150px;
+            }
+        }
+
+        &:hover .syns-search__btn__reset{
+            @include animation(spin 8000ms linear infinite);
+        }
+
+        // &:hover{
+        //     width: 100px;
+        // }
+    } 
+
+}
+
+.syns-page-title{
+    @extend %h1;
+
+    // height: 50px;
+    // font-size: 1.6em;
+    // padding: 10px 0;
+
+    // &::after{
+    //     content: "";
+    //     display: block;
+    //     height: 4px;
+    //     @include background-linear-gradient(180deg, rgba($theme-primary,0.5) 0%, rgba($theme-primary, 0) 100%);
+    // }
+}
+
+.syns-form{
+    & > div{
+        display: block;
+    }
+}
